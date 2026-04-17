@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+:root {
+  color: #101828;
+  background-color: #f4f6fb;
+  --ui-bg: #f4f6fb;
+  --ui-bg-muted: #edf1f7;
+  --ui-surface: #ffffff;
+  --ui-surface-soft: #f7f9fd;
+  --ui-border: #d8e0ec;
+  --ui-border-strong: #c2cedf;
+  --ui-text: #101828;
+  --ui-text-muted: #5a6678;
+  --ui-primary: #4338ca;
+  --ui-primary-hover: #3730a3;
+  --ui-primary-soft: #e9eaff;
+  --ui-secondary: #334155;
+  --ui-secondary-hover: #1e293b;
+  --ui-success: #059669;
+  --ui-warning: #d97706;
+  --ui-danger: #dc2626;
+  --ui-focus: rgba(67, 56, 202, 0.24);
+  --ui-shadow-sm:
+    0 1px 2px rgba(15, 23, 42, 0.06),
+    0 0 0 1px rgba(15, 23, 42, 0.02);
+  --ui-shadow-md:
+    0 12px 30px rgba(23, 35, 68, 0.08),
+    0 4px 10px rgba(23, 35, 68, 0.04);
+  --ui-shadow-lg:
+    0 20px 40px rgba(23, 35, 68, 0.13),
+    0 8px 16px rgba(23, 35, 68, 0.07);
+  --ui-radius-lg: 10px;
+  --ui-radius-xl: 12px;
+}
+
+body {
+  margin: 0;
+  color: var(--ui-text);
+  font-family: "Plus Jakarta Sans", "Avenir Next", "Segoe UI", sans-serif;
+  letter-spacing: -0.01em;
+  background: var(--ui-bg);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.surface-card {
+  border: 1px solid var(--ui-border);
+  background: var(--ui-surface);
+  box-shadow: none;
+}
+
+.section-card {
+  border: 1px solid var(--ui-border);
+  background: var(--ui-surface);
+  box-shadow: none;
+}
+
+.section-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ui-text);
+}
+
+.section-subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--ui-text-muted);
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #344256;
+}
+
+.input-control {
+  height: 2.875rem;
+  border-radius: var(--ui-radius-lg);
+  border: 1px solid var(--ui-border-strong);
+  background: #ffffff;
+  padding: 0 0.875rem;
+  font-size: 0.875rem;
+  color: var(--ui-text);
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.input-control:focus-visible {
+  outline: none;
+  border-color: var(--ui-primary);
+  box-shadow: 0 0 0 4px var(--ui-focus);
+}
+
+.input-control:disabled {
+  cursor: not-allowed;
+  background: var(--ui-bg-muted);
+  color: #64748b;
+}
+
+.helper-text {
+  min-height: 1.125rem;
+  font-size: 0.8125rem;
+  color: var(--ui-text-muted);
+}
+
+.helper-text.error {
+  color: var(--ui-danger);
+}
+
+.kpi-pill {
+  border-radius: 9999px;
+  border: 1px solid var(--ui-border-strong);
+  background: var(--ui-surface-soft);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #324154;
+  box-shadow: none;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ui-radius-lg);
+  border: 1px solid color-mix(in srgb, var(--ui-primary) 75%, #1e1b4b 25%);
+  background: var(--ui-primary);
+  color: #f8fafc;
+  font-weight: 700;
+  box-shadow: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.btn-primary:hover {
+  transform: none;
+  filter: none;
+  background: var(--ui-primary-hover);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(67, 56, 202, 0.22);
+}
+
+.btn-primary:disabled {
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.5;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ui-radius-lg);
+  border: 1px solid #1f2937;
+  background: var(--ui-secondary);
+  color: #f8fafc;
+  font-weight: 700;
+  box-shadow: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.btn-secondary:hover {
+  transform: none;
+  background: var(--ui-secondary-hover);
+}
+
+.btn-secondary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(30, 41, 59, 0.2);
+}
+
+.btn-secondary:disabled {
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.5;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
