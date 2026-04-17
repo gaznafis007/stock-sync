@@ -5,8 +5,7 @@ import type {
   PaginatedDropsResponse,
   Reservation,
 } from '../types';
-
-const BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:5000/api';
+import { API_URL } from '../config/endpoints';
 
 type ApiResult<T> = { ok: true; data: T } | { ok: false; error: ApiError };
 
@@ -15,7 +14,7 @@ async function request<T>(
   options?: RequestInit,
 ): Promise<ApiResult<T>> {
   try {
-    const response = await fetch(`${BASE_URL}${path}`, {
+    const response = await fetch(`${API_URL}${path}`, {
       ...options,
       headers: {
         'content-type': 'application/json',

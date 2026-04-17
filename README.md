@@ -59,6 +59,17 @@ Create PostgreSQL database:
 createdb stock_sync
 ```
 
+### Frontend
+
+Copy `frontend/.env.example` to `frontend/.env` and adjust the values for your backend:
+
+```bash
+VITE_API_URL=http://localhost:5000/api
+VITE_SOCKET_URL=http://localhost:5000
+```
+
+The frontend reads these values from Vite env variables, so components and hooks should use the shared API/service layer instead of hardcoding URLs.
+
 
 
 ## Run Locally
